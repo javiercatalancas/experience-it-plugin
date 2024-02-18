@@ -28,7 +28,6 @@ function experience_it_settings_page() {
     echo '<label for="user_qty">Cantidad de Usuarios a Crear:</label>';
     echo '<input type="number" id="user_qty" name="user_qty" value="' . esc_attr(get_option('user_qty', 10)) . '">';
     echo '<form method="post" action="">';
-    echo '<label for="user_limit">Usuarios por página:</label>';
     echo '<input type="hidden" name="import_users" value="true">';
     echo '<button type="submit" class="button-primary">Importar Usuarios</button>';
     echo '</form>';
