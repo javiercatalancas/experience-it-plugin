@@ -98,13 +98,7 @@ function search(){
                         console.log('no hay usuarios');
                     }
                     });
-
-                
-
-                
             }
-            
-            
         },
         error: function(error) {
             console.log("ERROR", error);
@@ -123,35 +117,5 @@ $('#reset-list').on('submit', function(event) {
 })
 
 });
-
-  /*   function getUsers(){
-        $.ajax({
-            url: get_users_ajax.ajaxurl,
-            type: 'post',
-            dataType: 'json',
-            data: {
-                action: 'get_users_ajax',
-            },
-            success: function(response){
-                $('users-listing-table tbody').empty();
-                
-                $.each(response, function(index, user) {
-                    var userRow = '<tr>' +
-                        '<td>' + user.username + '</td>' +
-                        '<td>' + (user.name || 'No especificado') + '</td>' +
-                        '<td>' + (user.surname1 || 'No especificado') + '</td>' +
-                        '<td>' + (user.surname2 || 'No especificado') + '</td>' +
-                        '<td>' + (user.email || 'No especificado') + '</td>' +
-                        '</tr>';
-                    $('#users-listing-table tbody').append(userRow);
-                });
-            },
-            error: function(error){
-                console.log("ERROR",error);
-            }
-        });
-    }
-
-    getUsers(); */
 
 

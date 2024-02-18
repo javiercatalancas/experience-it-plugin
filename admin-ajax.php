@@ -2,20 +2,6 @@
 define('WP_USE_THEMES', false);
 require_once( ABSPATH . 'wp-load.php' );
 
-function get_users_ajax(){
-    global $wpdb;
-    $table = $wpdb->prefix.'custom_users';
-    $users = $wpdb->get_results("SELECT * FROM $table");
-    if ($users === false) {
-        wp_send_json_error('Error al obtener los usuarios.');
-    } else {
-        wp_send_json($users);
-    } 
-}
-
-add_action('wp_ajax_get_users_action', 'get_users_ajax');
-add_action('wp_ajax_nopriv_get_users_action', 'get_users_ajax');
-
 function get_users_paginated() {
     global $wpdb;
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
@@ -43,7 +29,6 @@ add_action('wp_ajax_nopriv_get_users_paginated_action', 'get_users_ajax');
 function search_users_ajax() {
     global $wpdb;
 
-    /* if (!empty($_POST['search_term_name']) || (!empty($_POST['search_term_surname1'])) || (!empty($_POST['search_term_surname2'])) || (!empty($_POST['search_term_email']))) { */
         if (!empty($_POST['search_term_name'])) {
             $field = 'name';
             $search_term = sanitize_text_field($_POST['search_term_name']);
@@ -109,7 +94,6 @@ function search_users_ajax() {
     
         }
         } 
-    /* } else { wp_send_json_error('No se proporcionó un término de búsqueda.');} */
 
 }
 

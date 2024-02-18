@@ -1,6 +1,6 @@
 <?php
 define('WP_USE_THEMES', false);
-//require_once( plugin_dir_path( __FILE__ ) . '../../wp-load.php' );
+
 require_once( ABSPATH . 'wp-load.php' );
 require_once 'vendor/autoload.php';
 global $wpdb;

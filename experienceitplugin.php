@@ -19,7 +19,6 @@ function experience_it_enqueue_scripts() {
 }
 
 
-
 add_shortcode( 'users_shortcode_experience_it', 'experience_it_shortcode');
 function experience_it_shortcode() {
     ob_start();
